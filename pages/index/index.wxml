@@ -1,0 +1,100 @@
+<!--pages/mine/index.wxml-->
+
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" width="355" height="150" />
+    </swiper-item>
+  </block>
+</swiper>
+
+<view class="category-title">
+  <text class="name">新品上架</text>
+  <view class="line_flag"></view>
+  <image class="head-img" src="{{newgoods_head_url}}"></image>
+</view>
+
+<!--导航条-->
+<view class="navbar">
+  <text wx:for="{{navbar}}" wx:for-index="index" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+</view>
+
+<!-- 烘焙商品列表(热销) -->
+<scroll-view class="hot-item-container {{currentTab==0 ? '' : 'hidden'}}" scroll-y="true">
+  <view class="goods">
+    <block wx:for-items="{{goodsItems}}" wx:key="name">
+      <view class="goods-item" catchtap="catchTapCategory" data-type="{{item.name}}" data-typeid="{{item.typeId}}">
+        <view class="goods-img">
+          <image src="{{item.imageurl}}" class="goods-image" />
+        </view>
+        <view class="goods-text">
+          <text class="goods-text1">{{item.name}}</text>
+          <text class="goods-text2">销售量：{{item.salesvolume}}</text>
+          <p>{{item.newprice}}</p>
+        </view>
+      </view>
+      <!-- 是一条分界线 -->
+      <view class='goods-line'></view>
+    </block>
+  </view>
+</scroll-view>
+
+<!-- 烘焙商品列表(点心) -->
+<scroll-view class="hot-item-container {{currentTab==1 ? '' : 'hidden'}}" scroll-y="true">
+  <view class="goods">
+    <block wx:for-items="{{dessertItems}}" wx:key="name" wx:for-index="index">
+      <view wx:if="{{index%3===0}}" class="goods-item" catchtap="catchTapCategory" data-type="{{item.name}}" data-typeid="{{item.typeId}}">
+        <view class="goods-img">
+          <image src="{{item.imageurl}}" class="goods-image" />
+        </view>
+        <view class="goods-text">
+          <text class="goods-text1">{{item.name}}</text>
+          <text class="goods-text2">销售量：{{item.salesvolume}}</text>
+          <p>{{item.newprice}}</p>
+        </view>
+      </view>
+      <!-- 是一条分界线 -->
+      <view class='goods-line'></view>
+    </block>
+  </view>
+</scroll-view>
+
+<!-- 烘焙商品列表(饼干) -->
+<scroll-view class="hot-item-container {{currentTab==2 ? '' : 'hidden'}}" scroll-y="true">
+  <view class="goods">
+    <block wx:for-items="{{CookiesItems}}" wx:key="name" wx:for-index="index">
+      <view class="goods-item" catchtap="catchTapCategory" data-type="{{item.name}}" data-typeid="{{item.typeId}}">
+        <view class="goods-img">
+          <image src="{{item.imageurl}}" class="goods-image" />
+        </view>
+        <view class="goods-text">
+          <text class="goods-text1">{{item.name}}</text>
+          <text class="goods-text2">销售量：{{item.salesvolume}}</text>
+          <p>{{item.newprice}}</p>
+        </view>
+      </view>
+      <!-- 是一条分界线 -->
+      <view class='goods-line'></view>
+    </block>
+  </view>
+</scroll-view>
+
+<!-- 烘焙商品列表(蛋糕) -->
+<scroll-view class="hot-item-container {{currentTab==3 ? '' : 'hidden'}}" scroll-y="true">
+  <view class="goods">
+    <block wx:for-items="{{cakeItems}}" wx:key="name" wx:for-index="index">
+      <view class="goods-item" catchtap="catchTapCategory" data-type="{{item.name}}" data-typeid="{{item.typeId}}">
+        <view class="goods-img">
+          <image src="{{item.imageurl}}" class="goods-image" />
+        </view>
+        <view class="goods-text">
+          <text class="goods-text1">{{item.name}}</text>
+          <text class="goods-text2">销售量：{{item.salesvolume}}</text>
+          <p>{{item.newprice}}</p>
+        </view>
+      </view>
+      <!-- 是一条分界线 -->
+      <view class='goods-line'></view>
+    </block>
+  </view>
+</scroll-view>

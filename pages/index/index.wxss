@@ -1,0 +1,131 @@
+/* pages/mine/index.wxss */
+/* 直接设置swiper属性 */
+swiper {
+  height: 350rpx;
+}
+swiper-item image {
+  width: 100%;
+  height: 100%;
+}
+.navbar{  
+  flex: none;  
+  display: flex;  
+  background: #fff;  
+}  
+.navbar .item{  
+  position: relative;  
+  flex: auto;  
+  text-align: center;  
+  line-height: 80rpx;  
+  font-size:14px;
+}
+/* 顶部导航字体颜色 */
+.navbar .item.active{  
+  color: #f0145a;  
+}  
+/* 顶部指示条属性 */
+.navbar .item.active:after{  
+  content: "";  
+  display: block;  
+  position: absolute;  
+  bottom: 0;  
+  left: 0;  
+  right: 0;  
+  height: 6rpx;  
+  background: #f0145a;  
+}
+
+
+/*=================新品上架 样式====================*/
+
+.category-title {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15rpx;
+  margin-bottom: 0rpx;
+}
+
+.category-title .name {
+  font-size: 40rpx;
+  text-align: center;
+  margin: 10rpx auto;
+}
+
+.line_flag {
+  width: 80rpx;
+  height: 1rpx;
+  display: inline-block;
+  margin: 20rpx auto;
+  background-color: gainsboro;
+  text-align: center;
+}
+
+.line {
+  width: 100%;
+  height: 2rpx;
+  display: inline-block;
+  margin: 20rpx 0rpx;
+  background-color: gainsboro;
+  text-align: center;
+}
+
+image.head-img {
+  width: 100%;
+  height: 270rpx;
+}
+
+text {
+  color: #444;
+  font-size: 40rpx;
+}
+
+p{
+  color: red;
+  font-size: 30rpx;
+  margin-top: 20rpx;
+}
+
+.cate-container {
+  color: #fff;
+}
+
+/* 分割线 */
+.separate {
+  height: 15rpx;
+  background-color: #f2f2f2;
+}
+
+/* 商品列表样式 */
+.goods {
+  margin: 10rpx 10rpx;
+}
+.goods-item {
+  padding: 10rpx 10rpx;
+}
+.goods-image {
+  width:140rpx;
+  height: 140rpx;
+}
+.goods-line {
+ border-bottom: 1rpx solid #eee
+}
+.goods-item text{
+  font-size: 30rpx;
+  color: #444
+}
+.goods-text {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-left:15rpx;
+
+}
+.goods-img{
+  display: flex;
+  float: left;
+  flex-direction: row;
+}
+
+.hidden {
+    display: none;
+}
